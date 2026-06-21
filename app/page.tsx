@@ -175,25 +175,28 @@ export default function Home() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: "2rem" }}>
           {[
             {
-              tag: "Macro", tagBg: "#e3f2ea", tagColor: "#1e5c38",
-              title: "Bailey has no good options and markets haven't priced that in yet",
-              excerpt: "Services inflation is stuck. The housing market is softening fast. Cutting looks like panic; holding much longer starts breaking things. Sterling is too calm about all of this.",
-              date: "June 10, 2026", read: "6 min read",
+              tag: "Macro", tagBg: "#ede9f5", tagColor: "#6b4fa0",
+              slug: "/articles/the-deal-that-doesnt-change-anything",
+              title: "The deal that doesn't change anything.",
+              excerpt: "A US-Iran ceasefire memorandum has been framed as a breakthrough, but with energy flows not expected to recover until September, inflation set to stay above target into 2027, and Iran retaining effective control of the Strait, markets are pricing managed uncertainty rather than resolution.",
+              date: "June 17, 2026", read: "4 min read",
             },
             {
-              tag: "Geopolitics", tagBg: "#ede9f5", tagColor: "#5a3d8a",
+              tag: "Geopolitics", tagBg: "#ede9f5", tagColor: "#6b4fa0",
+              slug: "/articles/test-post",
               title: "India is buying Russian oil and courting Washington at the same time. It's working.",
               excerpt: "Modi gets called opportunistic for this. The more useful question is why everyone else isn't doing it. Delhi has rare earth supply chains both sides need and it's quietly making them pay for access.",
               date: "June 8, 2026", read: "9 min read",
             },
             {
-              tag: "Markets", tagBg: "#f0edf8", tagColor: "#6b4fa0",
+              tag: "Markets", tagBg: "#ede9f5", tagColor: "#6b4fa0",
+              slug: "/articles/test-post",
               title: "The yield curve inverted again. The recession crowd is probably wrong again too.",
               excerpt: "Three years of inversion calls, three years of waiting. What's driving the curve this time looks more like a term premium repricing than anything recessionary. The distinction matters if you're positioned for a hard landing.",
               date: "June 5, 2026", read: "7 min read",
             },
           ].map((a) => (
-            <div key={a.title} style={{ borderTop: "3px solid #ede9f5", paddingTop: "1rem", cursor: "pointer" }}>
+            <a key={a.title} href={a.slug} style={{ borderTop: "3px solid #ede9f5", paddingTop: "1rem", cursor: "pointer", textDecoration: "none", display: "block" }}>
               <span style={{ background: a.tagBg, color: a.tagColor, padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>
                 {a.tag}
               </span>
@@ -202,7 +205,7 @@ export default function Home() {
               </h2>
               <p style={{ fontSize: "13px", color: "#555", lineHeight: 1.65, marginBottom: "0.75rem" }}>{a.excerpt}</p>
               <div style={{ fontSize: "11px", color: "#aaa" }}>{a.date} · {a.read}</div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
